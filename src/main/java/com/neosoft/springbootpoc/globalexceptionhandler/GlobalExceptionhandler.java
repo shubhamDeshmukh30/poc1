@@ -38,7 +38,7 @@ public class GlobalExceptionhandler {
 				webRequest.getDescription(false), new Date());
 		return new ResponseEntity<>(dataResponse, HttpStatus.BAD_REQUEST);
 	}
-
+	@ExceptionHandler(InvaliId.class)
 	public ResponseEntity<?> invalididHandling(InvalidId invalidId, WebRequest request) {
 		DataResponse dataResponse = new DataResponse(invalidId.getMessage(), HttpStatus.BAD_REQUEST,
 				request.getDescription(false), new Date());
